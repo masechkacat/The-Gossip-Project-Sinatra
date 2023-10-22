@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Potin</title>
+  </head>
+  <body>
+    <h1>Voici la page du potin n°<%= params[:id].to_i + 1 %></h1>
+    <p>Son auteur : <%= @gossip.author %></p>
+    <p>Le contenu du potin : <%= @gossip.content %></p>
+    <a href="/gossips/<%= params[:id] %>/edit">Éditer</a>
+  </body>
+</html>
