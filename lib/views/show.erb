@@ -2,11 +2,79 @@
 <html>
   <head>
     <title>Page Potin</title>
+    <style>
+      body {
+        flex-direction: column;
+        display: flex;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: paleturquoise;
+      }
+
+      header {
+        text-align: center;
+        padding: 4%;
+        color: blue;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        padding-bottom: 10px;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .add-link {
+        color: #fff;
+        text-decoration: none;
+        background-color: blue;
+        padding: 10px 15px;
+        text-align: center;
+        margin: 10px auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);      
+      }
+
+      .add-link:hover {
+        background-color: #0053b3;
+      }
+
+      ul {
+          list-style: none;
+          padding: 0;
+      }
+
+      .gossip-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .gossip {
+        padding: 1%;
+        margin: 1%;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+    </style>
   </head>
   <body>
-    <h1>Voici la page du potin n°<%= params[:id].to_i + 1 %></h1>
-    <p>Son auteur : <%= @gossip.author %></p>
-    <p>Le contenu du potin : <%= @gossip.content %></p>
-    <a href="/gossips/<%= params[:id] %>/edit">Éditer</a>
+    <header>
+      <h1>Voici la page du potin n°<%= params[:id].to_i + 1 %></h1>
+    </header>
+    <ul class="gossip-container">
+      <li class="gossip">Son auteur : <i><%= @gossip.author %></i></li>
+      <li class="gossip">Le contenu du potin : <i><%= @gossip.content %></i></li>
+    </ul>
+    <a href="/gossips/<%= params[:id] %>/edit" class = "add-link">Éditer</a>
   </body>
 </html>

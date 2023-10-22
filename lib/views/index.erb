@@ -1,20 +1,117 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>The Gossip Project</title>
+    <title>The Gossip Project</title>
+    <style>
+      body {
+        flex-direction: column;
+        display: flex;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: paleturquoise;
+      }
+
+      header {
+        text-align: center;
+        padding: 4%;
+        color: blue;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        padding-bottom: 10px;
+      }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .add-link {
+        color: #fff;
+        text-decoration: none;
+        background-color: blue;
+        padding: 10px 15px;
+        text-align: center;
+        margin: 10px auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);      
+      }
+
+      .add-link:hover {
+        background-color: #0053b3;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .gossip-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .gossip {
+        padding: 1%;
+        margin: 1%;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .list-link {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 10px 15px;
+        text-align: center;
+        flex: 1;
+      }
+
+      .gossip:hover {
+        background-color: #eee;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          padding: 3%;
+          background-size: contain;
+        }
+
+        h1 {
+          font-size: 1.6em;
+        }
+
+        .add-link {
+          font-size: 1.2em;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>Bienvenue sur notre site de potins !</h1>
-    <p>Voila ! La liste des potins.</p>
-    <% gossips.each_with_index do |gossip, index| %>
-        <p>
-          <a href="/gossips/<%= index %>">
-            <%= gossip.author %> :
-            "<%= gossip.content %>"
+    <header>
+      <h1>Bienvenue sur notre site de potins !</h1>
+      <p>Vous pouvez vous-meme ajouter un nouveau potin :</p>
+      <a href="/gossips/new" class="add-link">Ajouter un nouveau potin</a>
+    </header>
+
+    <ul class="gossip-container">
+      <% gossips.each_with_index do |gossip, index| %>
+        <li class="gossip">
+          <a href="/gossips/<%= index %>" class="list-link">
+            <%= gossip.author %> : "<%= gossip.content %>"
           </a>
-        </p>
-    <% end %>      
-    <p>Vous pouvez vous-meme ajouter un nouveau potin :</p>
-    <a href="/gossips/new">Ajouter un nouveau potin</a>
+        </li>
+      <% end %>
+    </ul>
   </body>
 </html>

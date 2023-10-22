@@ -30,6 +30,6 @@ class Gossip
             csv << [gossip.author, gossip.content.to_s]
           end
         end
-      end
+    end
 end    
   

@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  header {
+    text-align: center;
+    padding: 4%;
+    background-image: url('team11.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* Стили для списка потинов */
+  p {
+    padding: 1%;
+    background-color: #fff;
+    margin: 1%;
+    border: 1px solid #ddd;
+  }
+
+  /* Стили для ссылок на потины */
+  a.list-link {
+    color: #333;
+    text-decoration: none;
+  }
+
+  a.list-link:hover {
+    background-color: #eee;
+  }
+
+  /* Адаптивные стили для маленьких экранов (меньше 768px) */
+  @media (max-width: 768px) {
+    header {
+      padding: 3%;
+      background-size: contain;
+    }
+
+    h1 {
+      font-size: 1.6em;
+    }
+
+    a.add-link {
+      font-size: 1.2em;
+    }
+  }
