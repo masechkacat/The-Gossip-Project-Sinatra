@@ -11,13 +11,13 @@ class ApplicationController < Sinatra::Base
     end
 
     get '/gossips/:id' do
-        index = params[:id].to_i
+        index = params[:id].to_i - 1
         @gossip = Gossip.all[index]
         erb :show
     end
 
     get '/gossips/:id/edit' do
-        index = params[:id].to_i
+        index = params[:id].to_i - 1
         @gossip = Gossip.all[index]
         erb :edit
     end
@@ -30,7 +30,7 @@ class ApplicationController < Sinatra::Base
     end
 
     post '/gossips/:id/edit' do
-        index = params[:id].to_i
+        index = params[:id].to_i - 1
         @gossip = Gossip.all[index]      
         @gossip.content = params[:content].to_s   
         Gossip.update(index, @gossip.content)      
