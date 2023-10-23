@@ -69,12 +69,13 @@
   </head>
   <body>
     <header>
-      <h1>Voici la page du potin n°<%= params[:id].to_i + 1 %></h1>
+      <h1>Voici la page du potin n°<%= params[:id] %></h1>
     </header>
     <ul class="gossip-container">
       <li class="gossip">Son auteur : <i><%= @gossip.author %></i></li>
       <li class="gossip">Le contenu du potin : <i><%= @gossip.content %></i></li>
     </ul>
     <a href="/gossips/<%= params[:id] %>/edit" class = "add-link">Éditer</a>
+    <a href="/" class = "add-link">Page d'accueil</a>
   </body>
 </html>
