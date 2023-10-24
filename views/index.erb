@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Gossip Project</title>
+    <link rel="stylesheet" href="/theme.css">    
+  </head>
+  <body>
+    <header>
+      <h1>Bienvenue sur notre site de potins !</h1>
+      <p>Vous pouvez vous-meme ajouter un nouveau potin :</p>
+      <a href="/gossips/new" class="add-link">Ajouter un nouveau potin</a>
+    </header>
+    <p class="title">Voici les potins actuelles:</p>
+    <ul class="gossip-container">
+      <% @gossips.each_with_index do |gossip, index| %>
+        <li class="gossip">
+          <a href="/gossips/<%= index + 1 %>" class="list-link">
+            <%= gossip.author %> : "<%= gossip.content %>"
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </body>
+</html>

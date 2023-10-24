@@ -1,8 +1,8 @@
 require 'bundler'
 Bundler.require
-$:.unshift File.expand_path("./../lib", __FILE__)
+$:.unshift File.expand_path("./../modele", __FILE__)
 
-require 'controller'
+require_relative 'controller'
 
 run ApplicationController
 

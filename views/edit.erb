@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Éditer un potin</title>
+    <link rel="stylesheet" href="/theme.css">
+  </head>
+  <body>
+    <header>
+      <h1>Éditer le potin</h1>
+      <p>Modifie ton potin ci-dessous</p>
+      <a href="/" class = "add-link">Page d'accueil</a>
+    </header>
+    
+    <form action="/gossips/<%= params[:id] %>/edit" method="post">
+      <label for="content">Nouveau contenu du potin :</label>
+      <textarea name="content" id="content" rows="4" required><%= @gossip.content %></textarea>
+      <br>
+      <input type="submit" value="Mettre à jour le potin">
+    </form>
+  </body>
+</html>

@@ -3,7 +3,8 @@ require 'gossip'
 class ApplicationController < Sinatra::Base
        
     get '/' do
-        erb :index, locals: { gossips: Gossip.all }
+        @gossips = Gossip.all
+        erb :index #, locals: { gossips: Gossip.all }
     end
     
     get '/gossips/new' do 
